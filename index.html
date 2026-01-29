@@ -27,16 +27,18 @@ tailwind.config = {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 body{font-family:'Inter',sans-serif}
 
-/* BACKGROUND */
+/* GRID BACKGROUND */
 .bg-grid{
   background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size:40px 40px;
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size:36px 36px;
 }
+
+/* GLASS CARD */
 .glass{
-  background:rgba(10,20,10,.75);
-  border:1px solid rgba(250,204,21,.15);
+  background:rgba(10,20,10,.72);
+  border:1px solid rgba(250,204,21,.18);
   backdrop-filter:blur(10px);
 }
 </style>
@@ -44,57 +46,58 @@ body{font-family:'Inter',sans-serif}
 
 <body class="min-h-screen bg-black bg-grid text-white flex justify-center px-4">
 
-<div class="w-full max-w-md text-center py-10">
+<div class="w-full max-w-md text-center py-10 space-y-6">
 
   <!-- PROFILE -->
-  <div class="flex justify-center mb-4">
+  <div class="flex flex-col items-center space-y-4">
     <div class="rounded-full p-1 ring-4 ring-gold">
       <img src="https://gogamex.fun/image/ayush%20(1).jpg"
            class="w-24 h-24 rounded-full object-cover">
     </div>
-  </div>
 
-  <h1 class="text-2xl font-bold text-gold mb-1">
-    AYUSH CRICKET & TENNIS
-  </h1>
+    <h1 class="text-2xl sm:text-3xl font-bold text-gold">
+      AYUSH CRICKET & TENNIS
+    </h1>
 
-  <div class="flex justify-center items-center gap-2 text-sm text-gold mb-3">
-    <i data-feather="users" class="w-4 h-4"></i>
-    <span>52k Active Members</span>
-  </div>
+    <div class="flex items-center gap-2 text-sm text-gold">
+      <i data-feather="users" class="w-4 h-4"></i>
+      <span>52k Active Members</span>
+    </div>
 
-  <!-- TAGS -->
-  <div class="flex justify-center gap-2 mb-6">
-    <span class="px-3 py-1 text-xs rounded-full bg-green-800">Elite Analyst</span>
-    <span class="px-3 py-1 text-xs rounded-full bg-red-800">Live Updates</span>
+    <!-- TAGS -->
+    <div class="flex gap-2 pt-2">
+      <span class="px-4 py-1 text-xs rounded-full bg-green-800">Elite Analyst</span>
+      <span class="px-4 py-1 text-xs rounded-full bg-red-800">Live Updates</span>
+    </div>
   </div>
 
   <!-- STATS -->
-  <div class="grid grid-cols-3 gap-3 mb-6">
-    <div class="glass rounded-xl p-3">
+  <div class="grid grid-cols-3 gap-4 pt-4">
+    <div class="glass rounded-xl p-4">
       <div class="text-gold text-xl font-bold">52,430</div>
-      <div class="text-xs text-gray-300">Subscribers</div>
+      <div class="text-xs text-gray-300 mt-1">Subscribers</div>
     </div>
-    <div class="glass rounded-xl p-3">
+    <div class="glass rounded-xl p-4">
       <div class="text-red-500 text-xl font-bold">98%</div>
-      <div class="text-xs text-gray-300">Accuracy</div>
+      <div class="text-xs text-gray-300 mt-1">Accuracy</div>
     </div>
-    <div class="glass rounded-xl p-3">
+    <div class="glass rounded-xl p-4">
       <div class="text-gold text-xl font-bold">4.9★</div>
-      <div class="text-xs text-gray-300">Rating</div>
+      <div class="text-xs text-gray-300 mt-1">Rating</div>
     </div>
   </div>
 
   <!-- CTA -->
   <a href="https://telegram.me/+vro6gIZTsKxhMWRl" target="_blank"
-     class="flex items-center justify-center gap-2 w-full py-4 rounded-xl text-lg font-bold
-            bg-gradient-to-r from-green-600 to-red-600 mb-6">
+     class="flex items-center justify-center gap-2 w-full py-4 rounded-xl
+            text-lg font-bold bg-gradient-to-r from-green-600 to-red-600
+            shadow-lg active:scale-95 transition">
     <i data-feather="send"></i>
     Join Telegram Channel
   </a>
 
   <!-- TRUST -->
-  <div class="glass rounded-xl p-4 flex justify-around text-sm">
+  <div class="glass rounded-xl p-5 flex justify-between text-xs sm:text-sm">
     <div class="flex flex-col items-center gap-1">
       <i data-feather="check-circle" class="text-green-500"></i>
       Verified
@@ -114,7 +117,7 @@ body{font-family:'Inter',sans-serif}
   </div>
 
   <!-- FOOTER -->
-  <p class="text-xs text-gray-400 mt-6">
+  <p class="text-xs text-gray-400 pt-4">
     © 2025 Ayush • Professional Cricket & Tennis Predictions
   </p>
 
@@ -125,8 +128,9 @@ feather.replace();
 anime({
   targets:'.glass',
   opacity:[0,1],
-  translateY:[20,0],
-  delay:anime.stagger(120)
+  translateY:[18,0],
+  delay:anime.stagger(120),
+  easing:'easeOutQuad'
 });
 </script>
 
