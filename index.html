@@ -27,8 +27,9 @@ tailwind.config = {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 body{font-family:'Inter',sans-serif}
 
-/* GRID BACKGROUND */
-.bg-grid{
+/* ✅ CHECK GRID BACKGROUND (FAST – PURE CSS) */
+.bg-check{
+  background-color:#000;
   background-image:
     linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
@@ -44,9 +45,9 @@ body{font-family:'Inter',sans-serif}
 </style>
 </head>
 
-<body class="min-h-screen bg-black bg-grid text-white flex justify-center px-4">
+<body class="min-h-screen bg-check text-white flex justify-center px-4">
 
-<div class="w-full max-w-md text-center py-10 space-y-6">
+<div class="w-full max-w-md text-center py-12 space-y-8">
 
   <!-- PROFILE -->
   <div class="flex flex-col items-center space-y-4">
@@ -65,14 +66,14 @@ body{font-family:'Inter',sans-serif}
     </div>
 
     <!-- TAGS -->
-    <div class="flex gap-2 pt-2">
+    <div class="flex gap-2 pt-1">
       <span class="px-4 py-1 text-xs rounded-full bg-green-800">Elite Analyst</span>
       <span class="px-4 py-1 text-xs rounded-full bg-red-800">Live Updates</span>
     </div>
   </div>
 
   <!-- STATS -->
-  <div class="grid grid-cols-3 gap-4 pt-4">
+  <div class="grid grid-cols-3 gap-4">
     <div class="glass rounded-xl p-4">
       <div class="text-gold text-xl font-bold">52,430</div>
       <div class="text-xs text-gray-300 mt-1">Subscribers</div>
@@ -91,7 +92,7 @@ body{font-family:'Inter',sans-serif}
   <a href="https://telegram.me/+vro6gIZTsKxhMWRl" target="_blank"
      class="flex items-center justify-center gap-2 w-full py-4 rounded-xl
             text-lg font-bold bg-gradient-to-r from-green-600 to-red-600
-            shadow-lg active:scale-95 transition">
+            shadow-lg transition active:scale-95">
     <i data-feather="send"></i>
     Join Telegram Channel
   </a>
@@ -117,7 +118,7 @@ body{font-family:'Inter',sans-serif}
   </div>
 
   <!-- FOOTER -->
-  <p class="text-xs text-gray-400 pt-4">
+  <p class="text-xs text-gray-400 pt-2">
     © 2025 Ayush • Professional Cricket & Tennis Predictions
   </p>
 
