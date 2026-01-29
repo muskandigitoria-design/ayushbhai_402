@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +15,8 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        electric:{400:'#00f0ff',500:'#00c2ff',600:'#0095ff'},
-        neon:{400:'#bd00ff',500:'#a000ff',600:'#7d00ff'}
+        gold:'#facc15',
+        darkgreen:'#0b1f14'
       }
     }
   }
@@ -25,184 +24,130 @@ tailwind.config = {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+body{font-family:'Inter',sans-serif}
 
-body{
-  font-family:'Inter',sans-serif;
-  min-height:100vh;
-  margin:0;
-  color:white;
-  position:relative;
-  overflow-y:auto;     /* ✅ SCROLL ENABLE */
+/* BACKGROUND */
+.bg-grid{
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size:40px 40px;
 }
-
-/* 🔥 BLUR BACKGROUND */
-.bg-blur{
-  position:fixed;
-  inset:0;
-  background:url("https://xplearn.site/wp-content/uploads/2026/01/A-stadium-🏟️.jpg") center/cover no-repeat;
-  filter:blur(10px);
-  transform:scale(1.15);
-  z-index:-2;
-}
-
-/* OVERLAY */
-.bg-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  z-index:-1;
-}
-
-/* GLASS CARD */
-.glass-card{
-  background:rgba(15,20,40,0.65);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-/* PROFILE RING */
-.profile-ring{
-  box-shadow:0 0 0 3px rgba(0,242,255,0.5),
-             0 0 0 6px rgba(189,0,255,0.3);
-}
-
-/* PULSE */
-.pulse{animation:pulse 2s infinite}
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(0,242,255,.4)}
-  70%{box-shadow:0 0 0 15px rgba(0,242,255,0)}
-  100%{box-shadow:0 0 0 0 rgba(0,242,255,0)}
-}
-
-/* CREDIT */
-.credit{
-  position:fixed;
-  bottom:10px;
-  width:100%;
-  text-align:center;
-  font-size:12px;
-  opacity:.85;
-}
-.credit a{
-  color:#00f0ff;
-  text-decoration:none;
+.glass{
+  background:rgba(10,20,10,.75);
+  border:1px solid rgba(250,204,21,.15);
+  backdrop-filter:blur(10px);
 }
 </style>
 </head>
 
-<body class="p-4">
+<body class="min-h-screen bg-black bg-grid text-white flex justify-center px-4">
 
-<!-- BACKGROUND -->
-<div class="bg-blur"></div>
-<div class="bg-overlay"></div>
+<div class="w-full max-w-md text-center py-10">
 
-<div class="container max-w-md mx-auto pb-24">
-
-<!-- PROFILE -->
-<div class="flex flex-col items-center mb-8 pt-6">
-  <div class="profile-ring rounded-full p-1 mb-4">
-    <img src="https://gogamex.fun/image/ayush%20(1).jpg"
-         class="w-24 h-24 rounded-full object-cover">
+  <!-- PROFILE -->
+  <div class="flex justify-center mb-4">
+    <div class="rounded-full p-1 ring-4 ring-gold">
+      <img src="https://gogamex.fun/image/ayush%20(1).jpg"
+           class="w-24 h-24 rounded-full object-cover">
+    </div>
   </div>
 
-  <h1 class="text-2xl font-bold mb-1 text-center">
-    AYUSH CRICKET & TENNIS Prediction🎾
+  <h1 class="text-2xl font-bold text-gold mb-1">
+    AYUSH CRICKET & TENNIS
   </h1>
 
-  <div class="flex items-center text-electric-400">
-    <i data-feather="users" class="w-4 h-4 mr-1"></i>
-    <span>52k Followers</span>
+  <div class="flex justify-center items-center gap-2 text-sm text-gold mb-3">
+    <i data-feather="users" class="w-4 h-4"></i>
+    <span>52k Active Members</span>
   </div>
-</div>
 
-<!-- STATS -->
-<div class="grid grid-cols-3 gap-4 mb-8">
-  <div class="glass-card p-4 text-center rounded-xl">
-    <div class="text-electric-400 text-2xl font-bold">52,430</div>
-    <div class="text-xs text-gray-300">Subscribers</div>
+  <!-- TAGS -->
+  <div class="flex justify-center gap-2 mb-6">
+    <span class="px-3 py-1 text-xs rounded-full bg-green-800">Elite Analyst</span>
+    <span class="px-3 py-1 text-xs rounded-full bg-red-800">Live Updates</span>
   </div>
-  <div class="glass-card p-4 text-center rounded-xl">
-    <div class="text-neon-400 text-2xl font-bold">1,120</div>
-    <div class="text-xs text-gray-300">Predictions</div>
-  </div>
-  <div class="glass-card p-4 text-center rounded-xl">
-    <div class="text-electric-400 text-2xl font-bold">98%</div>
-    <div class="text-xs text-gray-300">Accuracy</div>
-  </div>
-</div>
 
-<!-- CTA -->
-<a href="https://telegram.me/+vro6gIZTsKxhMWRl" target="_blank"
-class="w-full bg-gradient-to-r from-electric-500 to-neon-500 text-white font-bold py-4 px-6 rounded-xl mb-8 flex items-center justify-center pulse">
-<i data-feather="send" class="mr-2"></i> Join Telegram Channel
-</a>
+  <!-- STATS -->
+  <div class="grid grid-cols-3 gap-3 mb-6">
+    <div class="glass rounded-xl p-3">
+      <div class="text-gold text-xl font-bold">52,430</div>
+      <div class="text-xs text-gray-300">Subscribers</div>
+    </div>
+    <div class="glass rounded-xl p-3">
+      <div class="text-red-500 text-xl font-bold">98%</div>
+      <div class="text-xs text-gray-300">Accuracy</div>
+    </div>
+    <div class="glass rounded-xl p-3">
+      <div class="text-gold text-xl font-bold">4.9★</div>
+      <div class="text-xs text-gray-300">Rating</div>
+    </div>
+  </div>
 
-<!-- TIMER -->
-<div class="glass-card rounded-xl p-6 mb-8 text-center">
-<h3 class="text-electric-400 font-semibold mb-4">
-  Next Prediction In My Channel
-</h3>
-<div class="grid grid-cols-2 gap-4">
-  <div>
-    <div class="text-4xl font-bold" id="min">01</div>
-    <div class="text-xs text-gray-400">Minute</div>
-  </div>
-  <div>
-    <div class="text-4xl font-bold" id="sec">00</div>
-    <div class="text-xs text-gray-400">Seconds</div>
-  </div>
-</div>
-</div>
-
-<!-- FEATURES -->
-<div class="grid gap-4">
-  <div class="glass-card p-5 rounded-xl">
-    <h3 class="font-bold mb-1">Cricket Match Analysis 🏏</h3>
-    <p class="text-sm text-gray-300">Pitch report & team stats.</p>
-  </div>
-  <div class="glass-card p-5 rounded-xl">
-    <h3 class="font-bold mb-1">Tennis Match Insights 🎾</h3>
-    <p class="text-sm text-gray-300">Surface & fitness based analysis.</p>
-  </div>
-  <div class="glass-card p-5 rounded-xl">
-    <h3 class="font-bold mb-1">Live Match Updates 🔔</h3>
-    <p class="text-sm text-gray-300">Instant momentum alerts.</p>
-  </div>
-</div>
-
-</div>
-
-<!-- CREDIT -->
-<div class="credit">
-  Ads managed by 
-  <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank">
-    Nexgroww Agency
+  <!-- CTA -->
+  <a href="https://telegram.me/+vro6gIZTsKxhMWRl" target="_blank"
+     class="flex items-center justify-center gap-2 w-full py-4 rounded-xl text-lg font-bold
+            bg-gradient-to-r from-green-600 to-red-600 mb-6">
+    <i data-feather="send"></i>
+    Join Telegram Channel
   </a>
+
+  <!-- TRUST -->
+  <div class="glass rounded-xl p-4 flex justify-around text-sm">
+    <div class="flex flex-col items-center gap-1">
+      <i data-feather="check-circle" class="text-green-500"></i>
+      Verified
+    </div>
+    <div class="flex flex-col items-center gap-1">
+      <i data-feather="lock" class="text-yellow-400"></i>
+      Secure
+    </div>
+    <div class="flex flex-col items-center gap-1">
+      <i data-feather="trending-up" class="text-red-500"></i>
+      Profitable
+    </div>
+    <div class="flex flex-col items-center gap-1">
+      <i data-feather="star" class="text-gold"></i>
+      Top Rated
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <p class="text-xs text-gray-400 mt-6">
+    © 2025 Ayush • Professional Cricket & Tennis Predictions
+  </p>
+
 </div>
 
 <script>
 feather.replace();
-
-/* TIMER */
-let t=60;
-const m=document.getElementById("min");
-const s=document.getElementById("sec");
-setInterval(()=>{
-  m.innerText=String(Math.floor(t/60)).padStart(2,"0");
-  s.innerText=String(t%60).padStart(2,"0");
-  if(t>0)t--;
-},1000);
-
-/* ANIMATION */
 anime({
-  targets:'.glass-card',
+  targets:'.glass',
   opacity:[0,1],
   translateY:[20,0],
-  delay:anime.stagger(120),
-  easing:'easeOutQuad'
+  delay:anime.stagger(120)
 });
 </script>
-<!-- 🔥 Dynamic Meta Pixel Code --> <script> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); // init pixel fbq('init', '1319461659052581'); // Send unique UUID as event parameter fbq('track', 'PageView', { uuid: "fcbf738a-78a1-43f5-90d0-bc078e12e117" }); </script> <!-- Pixel NoScript Fallback --> <noscript> <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1319461659052581&ev=PageView&noscript=1"/> </noscript>
+
+<!-- META PIXEL (UNCHANGED) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1319461659052581');
+fbq('track', 'PageView', {uuid:'fcbf738a-78a1-43f5-90d0-bc078e12e117'});
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1319461659052581&ev=PageView&noscript=1"/>
+</noscript>
+
 </body>
 </html>
