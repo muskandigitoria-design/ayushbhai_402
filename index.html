@@ -15,8 +15,7 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        gold:'#facc15',
-        darkgreen:'#0b1f14'
+        gold:'#facc15'
       }
     }
   }
@@ -25,27 +24,30 @@ tailwind.config = {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-body{font-family:'Inter',sans-serif}
+body{
+  font-family:'Inter',sans-serif;
+  margin:0;
+}
 
-/* ✅ CHECK GRID BACKGROUND (FAST – PURE CSS) */
-.bg-check{
-  background-color:#000;
+/* ✅ STRONG GRID BACKGROUND (LIKE SCREENSHOT) */
+.bg-grid{
+  background-color:#050505;
   background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size:36px 36px;
+    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size:32px 32px;
 }
 
 /* GLASS CARD */
 .glass{
-  background:rgba(10,20,10,.72);
-  border:1px solid rgba(250,204,21,.18);
-  backdrop-filter:blur(10px);
+  background:rgba(10,20,10,.75);
+  border:1px solid rgba(250,204,21,.25);
+  backdrop-filter:blur(12px);
 }
 </style>
 </head>
 
-<body class="min-h-screen bg-check text-white flex justify-center px-4">
+<body class="min-h-screen bg-grid text-white flex justify-center px-4">
 
 <div class="w-full max-w-md text-center py-12 space-y-8">
 
