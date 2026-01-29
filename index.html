@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayush</title>
+
+<link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        electric:{400:'#00f0ff',500:'#00c2ff',600:'#0095ff'},
+        neon:{400:'#bd00ff',500:'#a000ff',600:'#7d00ff'}
+      }
+    }
+  }
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body{
+  font-family:'Inter',sans-serif;
+  min-height:100vh;
+  margin:0;
+  color:white;
+  position:relative;
+  overflow-y:auto;     /* ✅ SCROLL ENABLE */
+}
+
+/* 🔥 BLUR BACKGROUND */
+.bg-blur{
+  position:fixed;
+  inset:0;
+  background:url("https://xplearn.site/wp-content/uploads/2026/01/A-stadium-🏟️.jpg") center/cover no-repeat;
+  filter:blur(10px);
+  transform:scale(1.15);
+  z-index:-2;
+}
+
+/* OVERLAY */
+.bg-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  z-index:-1;
+}
+
+/* GLASS CARD */
+.glass-card{
+  background:rgba(15,20,40,0.65);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* PROFILE RING */
+.profile-ring{
+  box-shadow:0 0 0 3px rgba(0,242,255,0.5),
+             0 0 0 6px rgba(189,0,255,0.3);
+}
+
+/* PULSE */
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(0,242,255,.4)}
+  70%{box-shadow:0 0 0 15px rgba(0,242,255,0)}
+  100%{box-shadow:0 0 0 0 rgba(0,242,255,0)}
+}
+
+/* CREDIT */
+.credit{
+  position:fixed;
+  bottom:10px;
+  width:100%;
+  text-align:center;
+  font-size:12px;
+  opacity:.85;
+}
+.credit a{
+  color:#00f0ff;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body class="p-4">
+
+<!-- BACKGROUND -->
+<div class="bg-blur"></div>
+<div class="bg-overlay"></div>
+
+<div class="container max-w-md mx-auto pb-24">
+
+<!-- PROFILE -->
+<div class="flex flex-col items-center mb-8 pt-6">
+  <div class="profile-ring rounded-full p-1 mb-4">
+    <img src="https://gogamex.fun/image/ayush%20(1).jpg"
+         class="w-24 h-24 rounded-full object-cover">
+  </div>
+
+  <h1 class="text-2xl font-bold mb-1 text-center">
+    AYUSH CRICKET & TENNIS 🎾
+  </h1>
+
+  <div class="flex items-center text-electric-400">
+    <i data-feather="users" class="w-4 h-4 mr-1"></i>
+    <span>52k Followers</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="grid grid-cols-3 gap-4 mb-8">
+  <div class="glass-card p-4 text-center rounded-xl">
+    <div class="text-electric-400 text-2xl font-bold">52,430</div>
+    <div class="text-xs text-gray-300">Subscribers</div>
+  </div>
+  <div class="glass-card p-4 text-center rounded-xl">
+    <div class="text-neon-400 text-2xl font-bold">1,120</div>
+    <div class="text-xs text-gray-300">Predictions</div>
+  </div>
+  <div class="glass-card p-4 text-center rounded-xl">
+    <div class="text-electric-400 text-2xl font-bold">98%</div>
+    <div class="text-xs text-gray-300">Accuracy</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<a href="https://telegram.me/+vro6gIZTsKxhMWRl" target="_blank"
+class="w-full bg-gradient-to-r from-electric-500 to-neon-500 text-white font-bold py-4 px-6 rounded-xl mb-8 flex items-center justify-center pulse">
+<i data-feather="send" class="mr-2"></i> Join Telegram Channel
+</a>
+
+<!-- TIMER -->
+<div class="glass-card rounded-xl p-6 mb-8 text-center">
+<h3 class="text-electric-400 font-semibold mb-4">
+  Next Prediction In My Channel
+</h3>
+<div class="grid grid-cols-2 gap-4">
+  <div>
+    <div class="text-4xl font-bold" id="min">01</div>
+    <div class="text-xs text-gray-400">Minute</div>
+  </div>
+  <div>
+    <div class="text-4xl font-bold" id="sec">00</div>
+    <div class="text-xs text-gray-400">Seconds</div>
+  </div>
+</div>
+</div>
+
+<!-- FEATURES -->
+<div class="grid gap-4">
+  <div class="glass-card p-5 rounded-xl">
+    <h3 class="font-bold mb-1">Cricket Match Analysis 🏏</h3>
+    <p class="text-sm text-gray-300">Pitch report & team stats.</p>
+  </div>
+  <div class="glass-card p-5 rounded-xl">
+    <h3 class="font-bold mb-1">Tennis Match Insights 🎾</h3>
+    <p class="text-sm text-gray-300">Surface & fitness based analysis.</p>
+  </div>
+  <div class="glass-card p-5 rounded-xl">
+    <h3 class="font-bold mb-1">Live Match Updates 🔔</h3>
+    <p class="text-sm text-gray-300">Instant momentum alerts.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- CREDIT -->
+<div class="credit">
+  Ads managed by 
+  <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank">
+    Nexgroww Agency
+  </a>
+</div>
+
+<script>
+feather.replace();
+
+/* TIMER */
+let t=60;
+const m=document.getElementById("min");
+const s=document.getElementById("sec");
+setInterval(()=>{
+  m.innerText=String(Math.floor(t/60)).padStart(2,"0");
+  s.innerText=String(t%60).padStart(2,"0");
+  if(t>0)t--;
+},1000);
+
+/* ANIMATION */
+anime({
+  targets:'.glass-card',
+  opacity:[0,1],
+  translateY:[20,0],
+  delay:anime.stagger(120),
+  easing:'easeOutQuad'
+});
+</script>
+
+</body>
+</html>
